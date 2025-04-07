@@ -7,7 +7,6 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    console.log("working...with mongodb hello");
     return this.appService.getHello();
   }
 }
