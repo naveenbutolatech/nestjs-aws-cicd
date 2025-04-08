@@ -9,7 +9,9 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(), // Load environment variables
+    ConfigModule.forRoot({
+      isGlobal: true, // make it available everywhere
+    }), // Load environment variables
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
