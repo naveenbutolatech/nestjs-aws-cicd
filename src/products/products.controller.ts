@@ -29,7 +29,7 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
-  @ApiResponse({ status: 201, description: 'Product created successfully'})
+  @ApiResponse({ status: 201, description: 'Product created successfully!'})
   @ApiResponse({ status: 401, description: 'Unauthorized'})
   create(@Body() createProductDto: CreateProductDto) {
     return this.productsService.create(createProductDto);
