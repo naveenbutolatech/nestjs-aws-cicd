@@ -37,7 +37,13 @@ export class User {
     @CreateDateColumn()
     created: Date;
 
-    @UpdateDateColumn()
-    modified: Date;
+@Column({ nullable: true })
+resetPasswordToken?: string;
+
+@Column({ nullable: true })
+resetPasswordExpires?: Date;
+
+@UpdateDateColumn()
+modified: Date;
 }
 

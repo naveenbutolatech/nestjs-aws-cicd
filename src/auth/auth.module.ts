@@ -7,10 +7,12 @@ import { JwtStrategy } from './jwt.strategy';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { UserModule } from '../users/user.module'; // Use relative path
+import { EmailModule } from 'src/email/email.module';
 
 @Module({
   imports: [
     UserModule, // This provides UserService
+    EmailModule,
     ConfigModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
